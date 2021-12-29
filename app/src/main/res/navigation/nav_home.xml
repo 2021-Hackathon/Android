@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_surveyFinishFragment_to_resultFragment2"
             app:destination="@id/resultFragment2" />
+        <argument
+            android:name="list"
+            app:argType="string[]"/>
     </fragment>
     <fragment
         android:id="@+id/analyzePhotoFragment"
@@ -73,4 +76,7 @@
         android:name="com.example.a2021hackthon.view.fragment.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <argument
+        android:name="list"
+        app:argType="string[]"/>
 </navigation>

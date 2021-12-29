@@ -14,7 +14,7 @@ import com.example.a2021hackthon.R
 class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHolder>() {
 
     private val dataSet = mutableListOf<Survey>()
-    private val resultList = mutableListOf<String>()
+    private var resultList = arrayOf<String>("", "", "", "", "")
     private lateinit var mListener: OnItemClickListener
 
     interface OnItemClickListener {
@@ -35,7 +35,7 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
         notifyDataSetChanged()
     }
 
-    fun getResult() : List<String> {
+    fun getResult() : Array<String> {
         return resultList
     }
 
@@ -61,12 +61,12 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
         holder.bind(dataSet[position])
 
         holder.answer1.setOnClickListener {
-            resultList.add(holder.answer1.text.toString())
+            resultList.set(position, holder.answer1.text.toString())
             mListener.onClick(0)
         }
 
         holder.answer2.setOnClickListener {
-            resultList.add(holder.answer2.text.toString())
+            resultList[position] = holder.answer2.text.toString()
             mListener.onClick(1)
         }
     }
