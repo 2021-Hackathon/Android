@@ -10,11 +10,12 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.a2021hackthon.R
+import com.example.a2021hackthon.view.adapter.Survey
 
 class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHolder>() {
 
     private val dataSet = mutableListOf<Survey>()
-    private var resultList = arrayOf<String>("", "", "", "", "")
+    private var resultList: BooleanArray = booleanArrayOf(true, true, true, true, true)
     private lateinit var mListener: OnItemClickListener
 
     interface OnItemClickListener {
@@ -35,7 +36,7 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
         notifyDataSetChanged()
     }
 
-    fun getResult() : Array<String> {
+    fun getResult() : BooleanArray {
         return resultList
     }
 
@@ -61,12 +62,12 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
         holder.bind(dataSet[position])
 
         holder.answer1.setOnClickListener {
-            resultList.set(position, holder.answer1.text.toString())
+            resultList[position] = true
             mListener.onClick(0)
         }
 
         holder.answer2.setOnClickListener {
-            resultList[position] = holder.answer2.text.toString()
+            resultList[position] = false
             mListener.onClick(1)
         }
     }

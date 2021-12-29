@@ -1,6 +1,7 @@
 package com.example.a2021hackthon.model.remote
 
 import com.example.a2021hackthon.model.remote.dao.EmotionService
+import com.example.a2021hackthon.model.remote.dao.SurveyService
 import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,4 +17,5 @@ object RetrofitInstance {
         .build()
 
     val emotionService = retrofit.create(EmotionService::class.java)
+    val surveyService = retrofit.create(SurveyService::class.java)
 }
