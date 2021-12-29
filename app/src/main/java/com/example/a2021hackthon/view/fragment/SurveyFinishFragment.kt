@@ -18,7 +18,6 @@ class SurveyFinishFragment : Fragment() {
 
     private lateinit var binding: FragmentSurveyFinishBinding
     private val viewModel: SurveyViewModel by viewModels()
-    private val args: SurveyFinishFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +30,10 @@ class SurveyFinishFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val answerList = arguments?.getBooleanArray("answers")!!
+
         binding.btnSurveyResult.setOnClickListener {
-            viewModel.postAnalyzeSurvey(Survey(args.list))
+            viewModel.postAnalyzeSurvey(Survey(answerList))
             viewModel.isSuccess.observe(viewLifecycleOwner, {
                 findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToResultFragment2(it.food, it.URL))
             })

@@ -15,7 +15,7 @@ import com.example.a2021hackthon.view.adapter.Survey
 class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHolder>() {
 
     private val dataSet = mutableListOf<Survey>()
-    private var resultList: BooleanArray = booleanArrayOf(true, true, true, true, true)
+    private val resultList: BooleanArray = booleanArrayOf(true, true, true, true, true)
     private lateinit var mListener: OnItemClickListener
 
     interface OnItemClickListener {

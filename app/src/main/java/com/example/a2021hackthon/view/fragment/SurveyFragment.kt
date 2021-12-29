@@ -51,10 +51,12 @@ class SurveyFragment : Fragment() {
         }
 
         binding.indicator.count = 5
+
         viewPagerAdapter.setOnItemClickListener {
             if (binding.surveyViewPager.currentItem == 4)  {
-                val list = viewPagerAdapter.getResult()
-                findNavController().navigate(SurveyFragmentDirections.actionSurveyFragment2ToSurveyFinishFragment(list))
+                val bundle = Bundle()
+                bundle.putBooleanArray("answers", viewPagerAdapter.getResult())
+                findNavController().navigate(R.id.action_surveyFragment2_to_surveyFinishFragment, bundle)
             } else {
                 binding.surveyViewPager.currentItem++
             }

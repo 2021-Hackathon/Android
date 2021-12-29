@@ -55,9 +55,10 @@
         <action
             android:id="@+id/action_surveyFinishFragment_to_resultFragment2"
             app:destination="@id/resultFragment2" />
-        <argument
-            android:name="list"
-            app:argType="boolean[]" />
+<!--        <argument-->
+<!--            android:name="list"-->
+<!--            app:argType="boolean[]"-->
+<!--            android:defaultValue="boolean[]"/>-->
     </fragment>
     <fragment
         android:id="@+id/analyzePhotoFragment"
