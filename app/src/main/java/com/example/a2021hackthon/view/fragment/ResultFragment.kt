@@ -31,11 +31,11 @@ class ResultFragment : Fragment() {
     }
 
     private fun init() {
-        Glide.with(binding.resultImg).load(args.url).into(binding.resultImg)
+        Glide.with(binding.resultImg).load(args.imageUri).into(binding.resultImg)
         binding.resultContent.text = args.food
 
         binding.resultBack.setOnClickListener {
-            findNavController().navigate(R.id.action_resultFragment2_to_homeFragment)
+            findNavController().navigate(R.id.action_resultFragment2_to_homeFragment2)
         }
     }
 }

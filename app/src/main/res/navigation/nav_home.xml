@@ -82,5 +82,8 @@
         <argument
             android:name="food"
             app:argType="string"/>
+        <action
+            android:id="@+id/action_resultFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
