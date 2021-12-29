@@ -8,7 +8,10 @@ import org.koin.dsl.module
 
 val repoModule = module {
     single {
-        EmotionRepository(RetrofitInstance.emotionService)
+        EmotionRepository(get())
+    }
+    single {
+        get<RetrofitInstance>().emotionService
     }
 }
 

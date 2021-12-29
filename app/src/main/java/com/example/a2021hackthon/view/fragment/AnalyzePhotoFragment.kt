@@ -13,6 +13,7 @@ import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentHomeFaceAnalyzeBinding
 import com.example.a2021hackthon.view.utils.MessageUtils
 import com.example.a2021hackthon.viewmodel.AnalyzePhotoViewModel
+import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
 class AnalyzePhotoFragment : Fragment() {
@@ -20,7 +21,7 @@ class AnalyzePhotoFragment : Fragment() {
     private val navController by lazy { findNavController() }
 
     private lateinit var binding: FragmentHomeFaceAnalyzeBinding
-    private val viewModel: AnalyzePhotoViewModel by viewModels()
+    private val viewModel: AnalyzePhotoViewModel by inject()
 
     private val navArgs by navArgs<AnalyzePhotoFragmentArgs>()
 

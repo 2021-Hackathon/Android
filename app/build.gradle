@@ -45,6 +45,7 @@ dependencies {
 
     // koin
     implementation "org.koin:koin-android:2.2.2"
+    implementation "org.koin:koin-androidx-scope:2.2.2"
     implementation "org.koin:koin-android-viewmodel:2.2.2"
 
     // navigation
