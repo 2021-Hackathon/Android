@@ -30,7 +30,7 @@ class HomeTimeFragment : Fragment() {
         binding.btnStartHomeTime.setOnClickListener {
             val bundle = Bundle()
             bundle.putBoolean("isSurvey", false)
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoadingFragment())
+            findNavController().navigate(R.id.action_homeFragment_to_loadingFragment, bundle)
         }
     }
 }

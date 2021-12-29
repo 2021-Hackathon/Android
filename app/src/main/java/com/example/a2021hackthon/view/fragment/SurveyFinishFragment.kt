@@ -36,7 +36,7 @@ class SurveyFinishFragment : Fragment() {
             val bundle = Bundle()
             bundle.putBooleanArray("answers", answerList)
             bundle.putBoolean("isSurvey", true)
-            findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToLoadingFragment())
+            findNavController().navigate(R.id.action_surveyFinishFragment_to_loadingFragment, bundle)
         }
     }
 }
