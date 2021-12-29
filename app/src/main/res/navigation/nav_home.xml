@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.a2021hackthon.view.fragment.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_homeFaceSelectPhotoFragment"
+            app:destination="@id/homeFaceSelectPhotoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFaceSelectPhotoFragment"
+        android:name="com.example.a2021hackthon.view.fragment.HomeFaceSelectPhotoFragment"
+        tools:layout="@layout/fragment_home_face_select_photo"
+        android:label="HomeFaceSelectPhotoFragment" >
+        <action
+            android:id="@+id/action_homeFaceSelectPhotoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
