@@ -51,8 +51,6 @@ class SurveyFragment : Fragment() {
             viewPagerAdapter.setData(list)
         }
 
-        binding.indicator.count = 5
-
         viewPagerAdapter.setOnItemClickListener {
             if (binding.surveyViewPager.currentItem == 4)  {
                 val bundle = Bundle()

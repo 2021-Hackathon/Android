@@ -19,20 +19,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.rd.PageIndicatorView
-            android:id="@+id/indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:piv_viewPager="@id/surveyViewPager"
-            android:layout_marginBottom="30dp"
-            app:piv_dynamicCount="true"
-            app:piv_selectedColor="#F25454"
-            app:piv_unselectedColor="#d4d4d4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
