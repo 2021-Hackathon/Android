@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="르뽕뿡 대충 제목이라는 뜻"
+            android:text="안녕하세요! 오늘의 음식을 추천해드려요!"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/viewPager_home"
             app:layout_constraintStart_toStartOf="parent"

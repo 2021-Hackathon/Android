@@ -22,7 +22,8 @@ class SelectPhotoFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeFaceSelectPhotoBinding
 
-    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var photoResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var cameraResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,24 +39,36 @@ class SelectPhotoFragment : Fragment() {
         observe()
 
         binding.btnAlbum.setOnClickListener {
-            ImagePicker.selectStart(resultLauncher)
+            ImagePicker.selectStart(photoResultLauncher)
         }
 
         binding.btnCamera.setOnClickListener {
-
+            ImagePicker.cameraStart(cameraResultLauncher)
         }
     }
 
     private fun init() {
-        resultLauncher = registerForActivityResult(
+        photoResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
-            ImagePicker.init(it)
+            ImagePicker.initSelection(it)
+        }
+
+        cameraResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            ImagePicker.initCamera(it, requireActivity().contentResolver)
         }
     }
 
     private fun observe() {
         ImagePicker.image.observe(viewLifecycleOwner) {
+            navController.navigate(
+                SelectPhotoFragmentDirections.actionHomeFaceSelectPhotoFragmentToAnalyzePhotoFragment(it.toString())
+            )
+        }
+
+        ImagePicker.cameraImage.observe(viewLifecycleOwner) {
             navController.navigate(
                 SelectPhotoFragmentDirections.actionHomeFaceSelectPhotoFragmentToAnalyzePhotoFragment(it.toString())
             )

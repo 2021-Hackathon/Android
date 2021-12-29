@@ -11,9 +11,8 @@ import retrofit2.http.POST
 import retrofit2.http.Part
 
 interface EmotionService {
-
     @Multipart
-    @POST("")
+    @POST("/")
     fun postAnalyzeEmotion(
         @Part attachment: MultipartBody.Part
     ): Single<Response<Res<EmotionFood>>>

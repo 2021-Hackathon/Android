@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.a2021hackthon.databinding.FragmentHomeFaceAnalyzeBinding
+import com.example.a2021hackthon.model.remote.dto.EmotionFood
 import com.example.a2021hackthon.view.utils.MessageUtils
 import com.example.a2021hackthon.viewmodel.AnalyzePhotoViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,14 +42,16 @@ class AnalyzePhotoFragment : Fragment() {
         val photoUri = navArgs.photoUri.toUri()
 
         binding.imageView.setImageURI(photoUri)
-        viewModel.postAnalyzePhoto(requireActivity().contentResolver, photoUri)
+
+        Thread.sleep(1000L)
+        viewModel.postAnalyzePhoto(requireContext(), photoUri)
     }
 
     private fun observe() = with (viewModel) {
         isSuccess.observe(viewLifecycleOwner) {
             navController.navigate(
-                AnalyzePhotoFragmentDirections.actionAnalyzePhotoFragmentToResultFragment2(
-                    it.food, it.URL
+                AnalyzePhotoFragmentDirections.actionAnalyzePhotoFragmentToAnalyzePhotoResultFragment(
+                    it.emotion, it.food, it.URL
                 ))
         }
 

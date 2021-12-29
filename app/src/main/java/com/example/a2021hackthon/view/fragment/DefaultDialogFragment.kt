@@ -1,5 +1,10 @@
 package com.example.a2021hackthon.view.fragment
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,5 +27,16 @@ class DefaultDialogFragment(
         btn.setOnClickListener {
             dismiss()
         }
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog: AlertDialog = AlertDialog.Builder(requireActivity())
+            .setView(view)
+            .create()
+
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        return dialog
     }
 }

@@ -1,6 +1,7 @@
 package com.example.a2021hackthon.viewmodel
 
 import android.content.ContentResolver
+import android.content.Context
 import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -22,16 +23,17 @@ class AnalyzePhotoViewModel @Inject constructor(
     val isSuccess = MutableLiveData<EmotionFood>()
     val isFailure = MutableLiveData<String>()
 
-    fun postAnalyzePhoto(contentResolver: ContentResolver, image: Uri) {
-        val imageBody = image.toImageBody("attachment", contentResolver)
+    fun postAnalyzePhoto(context: Context, image: Uri) {
+        val imageBody = image.toImageBody("attachment", context)
 
         repository.postAnalyzeEmotion(imageBody)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                Log.e("asdfsdf", it.toString())
+                Log.d("postAnalyzePhoto", it.toString())
                 isSuccess.value = it
             }, {
+                Log.e("postAnalyzePhoto", it.message.toString())
                 isFailure.value = it.message
             })
     }
