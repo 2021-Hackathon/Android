@@ -13,6 +13,7 @@ import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentHomeFaceAnalyzeBinding
 import com.example.a2021hackthon.view.utils.MessageUtils
 import com.example.a2021hackthon.viewmodel.AnalyzePhotoViewModel
+import org.koin.core.parameter.parametersOf
 
 class AnalyzePhotoFragment : Fragment() {
 
