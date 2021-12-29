@@ -1,7 +1,6 @@
 package com.example.a2021hackthon.view.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,7 @@ class HomeFaceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeFaceBinding.inflate(layoutInflater, container, false)
+        binding = FragmentHomeFaceBinding.inflate(inflater, container, false)
         return binding.root
     }
 

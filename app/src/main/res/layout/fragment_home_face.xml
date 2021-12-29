@@ -35,8 +35,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_start_home_face"
             style="@style/HomeStartButton"
-            android:text="시작하기"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="시작하기" />
     </LinearLayout>
 </layout>
