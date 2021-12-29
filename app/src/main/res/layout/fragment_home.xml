@@ -30,6 +30,7 @@
 
         <TextView
             android:id="@+id/textView3"
+            android:visibility="gone"
             style="@style/Base.Widget.AppCompat.TextView.Big"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

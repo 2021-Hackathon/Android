@@ -25,6 +25,8 @@ class SelectPhotoFragment : Fragment() {
     private lateinit var photoResultLauncher: ActivityResultLauncher<Intent>
     private lateinit var cameraResultLauncher: ActivityResultLauncher<Intent>
 
+    private val imagePicker = ImagePicker()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,11 +41,11 @@ class SelectPhotoFragment : Fragment() {
         observe()
 
         binding.btnAlbum.setOnClickListener {
-            ImagePicker.selectStart(photoResultLauncher)
+            imagePicker.selectStart(photoResultLauncher)
         }
 
         binding.btnCamera.setOnClickListener {
-            ImagePicker.cameraStart(cameraResultLauncher)
+            imagePicker.cameraStart(cameraResultLauncher)
         }
     }
 
@@ -51,24 +53,24 @@ class SelectPhotoFragment : Fragment() {
         photoResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
-            ImagePicker.initSelection(it)
+            imagePicker.initSelection(it)
         }
 
         cameraResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
-            ImagePicker.initCamera(it, requireActivity().contentResolver)
+            imagePicker.initCamera(it, requireActivity().contentResolver)
         }
     }
 
-    private fun observe() {
-        ImagePicker.image.observe(viewLifecycleOwner) {
+    private fun observe() = with(imagePicker) {
+        image.observe(viewLifecycleOwner) {
             navController.navigate(
                 SelectPhotoFragmentDirections.actionHomeFaceSelectPhotoFragmentToAnalyzePhotoFragment(it.toString())
             )
         }
 
-        ImagePicker.cameraImage.observe(viewLifecycleOwner) {
+        cameraImage.observe(viewLifecycleOwner) {
             navController.navigate(
                 SelectPhotoFragmentDirections.actionHomeFaceSelectPhotoFragmentToAnalyzePhotoFragment(it.toString())
             )

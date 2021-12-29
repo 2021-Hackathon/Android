@@ -14,7 +14,7 @@ import androidx.lifecycle.MutableLiveData
 import java.io.ByteArrayOutputStream
 import java.util.*
 
-object ImagePicker {
+class ImagePicker {
     val image = MutableLiveData<Uri>()
     val cameraImage = MutableLiveData<Uri>()
 

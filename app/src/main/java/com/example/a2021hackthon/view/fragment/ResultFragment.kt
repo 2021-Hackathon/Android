@@ -37,7 +37,7 @@ class ResultFragment : Fragment() {
 
     private fun init() {
         Glide.with(binding.resultImg).load(RetrofitInstance.BASE_URL + args.imageUri.substring(1)).into(binding.resultImg)
-        binding.resultContent.text = args.food
+        binding.resultContent.text = "오늘은 ${args.food}, 어떠신가요?"
 
         binding.btnBack.setOnClickListener {
             navController.navigate(R.id.action_resultFragment2_to_homeFragment2)

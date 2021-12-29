@@ -50,7 +50,6 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
             answer1.text = data.answer1
             answer2.text = data.answer2
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
