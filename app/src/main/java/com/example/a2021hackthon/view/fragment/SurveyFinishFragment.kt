@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentSurveyFinishBinding
 
 class SurveyFinishFragment : Fragment() {
@@ -21,6 +23,10 @@ class SurveyFinishFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnSurveyResult.setOnClickListener {
+            findNavController().navigate(R.id.action_surveyFinishFragment_to_resultFragment)
+        }
     }
 
 }

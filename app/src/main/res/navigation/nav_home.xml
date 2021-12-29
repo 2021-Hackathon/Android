@@ -51,7 +51,11 @@
         android:id="@+id/surveyFinishFragment"
         android:name="com.example.a2021hackthon.view.fragment.SurveyFinishFragment"
         android:label="fragment_survey_finish"
-        tools:layout="@layout/fragment_survey_finish" />
+        tools:layout="@layout/fragment_survey_finish" >
+        <action
+            android:id="@+id/action_surveyFinishFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/analyzePhotoFragment"
         android:name="com.example.a2021hackthon.view.fragment.AnalyzePhotoFragment"
@@ -64,4 +68,9 @@
             android:name="photoUri"
             app:argType="string"/>
     </fragment>
+    <fragment
+        android:id="@+id/resultFragment2"
+        android:name="com.example.a2021hackthon.view.fragment.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>

@@ -50,6 +50,7 @@ class SurveyFragment : Fragment() {
             viewPagerAdapter.setData(list)
         }
 
+        binding.indicator.count = 5
         viewPagerAdapter.setOnItemClickListener {
             if (binding.surveyViewPager.currentItem == 4)  {
                 findNavController().navigate(R.id.action_surveyFragment2_to_surveyFinishFragment)

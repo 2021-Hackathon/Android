@@ -4,43 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragment.SurveyFinishFragment">
+    tools:context=".view.fragment.ResultFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/survey_finish_"
+            android:id="@+id/result_title"
             android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:text="설문이 끝났습니다."
-            android:background="#F25454"
+            android:layout_height="146dp"
+            android:text="결과"
+            android:background="@drawable/background_title"
             android:textSize="24sp"
             android:textColor="@color/white"
             android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/result_img"
+            app:layout_constraintTop_toBottomOf="@id/result_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/survey_result"
-            app:layout_constraintBottom_toTopOf="@id/btn_survey_result"
-            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/result_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="18sp"
-            android:layout_marginBottom="10dp"
-            android:text="버튼 눌러서 결과 보기"
-           android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintTop_toBottomOf="@id/result_img"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_survey_result"
+            android:id="@+id/result_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
+            android:text="돌아가기"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_button_red"
             android:layout_marginHorizontal="35dp"
-            android:text="결과보기"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

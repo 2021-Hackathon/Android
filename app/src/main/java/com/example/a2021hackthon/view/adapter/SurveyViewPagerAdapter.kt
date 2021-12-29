@@ -3,6 +3,7 @@ package com.example.a2021hackthon.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
@@ -61,13 +62,11 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
 
         holder.answer1.setOnClickListener {
             resultList.add(holder.answer1.text.toString())
-            resultList.remove(holder.answer2.text.toString())
             mListener.onClick(0)
         }
 
         holder.answer2.setOnClickListener {
             resultList.add(holder.answer2.text.toString())
-            resultList.remove(holder.answer1.text.toString())
             mListener.onClick(1)
         }
     }
