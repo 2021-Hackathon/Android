@@ -7,26 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.a2021hackthon.R
-import com.example.a2021hackthon.databinding.FragmentSurveyFinishBinding
+import com.example.a2021hackthon.databinding.FragmentHomeTimeBinding
 
-class SurveyFinishFragment : Fragment() {
+class HomeTimeFragment : Fragment() {
 
-    private lateinit var binding: FragmentSurveyFinishBinding
+    private lateinit var binding: FragmentHomeTimeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSurveyFinishBinding.inflate(inflater, container, false)
+        binding = FragmentHomeTimeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSurveyResult.setOnClickListener {
-            findNavController().navigate(R.id.action_surveyFinishFragment_to_resultFragment2)
+        binding.btnStartHomeTime.setOnClickListener {
         }
     }
-
 }
