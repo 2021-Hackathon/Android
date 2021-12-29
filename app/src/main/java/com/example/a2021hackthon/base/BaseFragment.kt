@@ -6,8 +6,8 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<T : ViewBinding> : Fragment() {
 
-    private var _binding: T? = null
-    protected val binding = _binding
+    protected var _binding: T? = null
+    protected val binding get() = _binding!!
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
