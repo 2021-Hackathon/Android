@@ -62,8 +62,8 @@
         android:label="AnalyzePhotoFragment"
         tools:layout="@layout/fragment_home_face_analyze">
         <action
-            android:id="@+id/action_analyzePhotoFragment_to_homeFaceSelectPhotoFragment"
-            app:destination="@id/homeFaceSelectPhotoFragment" />
+            android:id="@+id/action_analyzePhotoFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2" />
         <argument
             android:name="photoUri"
             app:argType="string"/>
