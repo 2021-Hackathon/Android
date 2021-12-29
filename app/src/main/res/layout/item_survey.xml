@@ -46,7 +46,7 @@
             android:layout_weight="1"
             android:textSize="24sp"
             tools:text="A.\n아니요"
-           app:layout_constraintTop_toBottomOf="@id/item_survey_content"/>
+            app:layout_constraintTop_toBottomOf="@id/item_survey_content"/>
 
 
     </LinearLayout>

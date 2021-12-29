@@ -7,12 +7,26 @@ import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.a2021hackthon.R
 
 class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHolder>() {
 
     private val dataSet = mutableListOf<Survey>()
     private val resultList = mutableListOf<String>()
+    private lateinit var mListener: OnItemClickListener
+
+    interface OnItemClickListener {
+        fun onClick(id: Int)
+    }
+
+    fun setOnItemClickListener(listener: (Int) -> Unit) {
+        mListener = object : OnItemClickListener {
+            override fun onClick(id: Int) {
+                listener(id)
+            }
+        }
+    }
 
     fun setData(data: List<Survey>) {
         dataSet.clear()
@@ -43,16 +57,20 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataSet[position])
+            holder.bind(dataSet[position])
+
         holder.answer1.setOnClickListener {
             resultList.add(holder.answer1.text.toString())
             resultList.remove(holder.answer2.text.toString())
+            mListener.onClick(0)
         }
 
         holder.answer2.setOnClickListener {
             resultList.add(holder.answer2.text.toString())
             resultList.remove(holder.answer1.text.toString())
+            mListener.onClick(1)
         }
+
     }
 
     override fun getItemCount() = 5

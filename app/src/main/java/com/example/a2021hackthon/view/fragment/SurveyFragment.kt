@@ -1,6 +1,7 @@
 package com.example.a2021hackthon.view.activity.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +39,7 @@ class SurveyFragment : BaseFragment<FragmentSurveyBinding>() {
 
         for (i in 0..content.size - 1) {
             list.add(Survey(content[i], answer1[i], answer2[i]))
+            Log.d("List", list.toString())
         }
 
         binding.surveyViewPager.apply {
@@ -47,8 +49,10 @@ class SurveyFragment : BaseFragment<FragmentSurveyBinding>() {
             viewPagerAdapter.setData(list)
         }
 
-        binding.next.setOnClickListener {
+        binding.surveyViewPager.setOnClickListener {
             binding.surveyViewPager.currentItem++
         }
+
+
     }
 }
