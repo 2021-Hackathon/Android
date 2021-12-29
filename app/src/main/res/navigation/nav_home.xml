@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/surveyFragment2"
-        android:name="com.example.a2021hackthon.view.activity.fragment.SurveyFragment"
+        android:name="com.example.a2021hackthon.view.fragment.SurveyFragment"
         android:label="fragment_survey"
         tools:layout="@layout/fragment_survey" />
 </navigation>

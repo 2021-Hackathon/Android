@@ -57,7 +57,7 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.bind(dataSet[position])
+        holder.bind(dataSet[position])
 
         holder.answer1.setOnClickListener {
             resultList.add(holder.answer1.text.toString())
@@ -70,7 +70,6 @@ class SurveyViewPagerAdapter: RecyclerView.Adapter<SurveyViewPagerAdapter.ViewHo
             resultList.remove(holder.answer1.text.toString())
             mListener.onClick(1)
         }
-
     }
 
     override fun getItemCount() = 5

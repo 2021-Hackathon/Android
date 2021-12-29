@@ -1,4 +1,4 @@
-package com.example.a2021hackthon.view.activity.fragment
+package com.example.a2021hackthon.view.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -8,20 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.a2021hackthon.R
-import com.example.a2021hackthon.base.BaseFragment
 import com.example.a2021hackthon.databinding.FragmentSurveyBinding
 import com.example.a2021hackthon.view.adapter.Survey
 import com.example.a2021hackthon.view.adapter.SurveyViewPagerAdapter
 
-class SurveyFragment : BaseFragment<FragmentSurveyBinding>() {
+class SurveyFragment : Fragment() {
 
+    private lateinit var binding: FragmentSurveyBinding
     private lateinit var viewPagerAdapter: SurveyViewPagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSurveyBinding.inflate(inflater, container, false)
+        binding = FragmentSurveyBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,7 +37,7 @@ class SurveyFragment : BaseFragment<FragmentSurveyBinding>() {
         val answer1 = resources.getStringArray(R.array.surveyAnswer1)
         val answer2 = resources.getStringArray(R.array.surveyAnswer2)
 
-        for (i in 0..content.size - 1) {
+        for (i in content.indices) {
             list.add(Survey(content[i], answer1[i], answer2[i]))
             Log.d("List", list.toString())
         }
