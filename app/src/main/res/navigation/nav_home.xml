@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_surveyFragment2"
             app:destination="@id/surveyFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2" />
     </fragment>
     <fragment
         android:id="@+id/homeFaceSelectPhotoFragment"

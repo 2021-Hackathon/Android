@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentResultBinding
+import com.example.a2021hackthon.model.remote.RetrofitInstance
+import com.example.a2021hackthon.view.utils.ImagePicker
 
 class ResultFragment : Fragment() {
 
@@ -31,7 +34,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun init() {
-        Glide.with(binding.resultImg).load(args.imageUri).into(binding.resultImg)
+        Glide.with(binding.resultImg).load(RetrofitInstance.BASE_URL + args.imageUri.substring(1)).into(binding.resultImg)
         binding.resultContent.text = args.food
 
         binding.resultBack.setOnClickListener {

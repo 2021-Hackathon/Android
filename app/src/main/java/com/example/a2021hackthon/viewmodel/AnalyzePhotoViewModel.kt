@@ -5,6 +5,7 @@ import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.a2021hackthon.model.remote.dto.EmotionFood
 import com.example.a2021hackthon.model.remote.dto.Food
 import com.example.a2021hackthon.model.repository.EmotionRepository
 import com.example.a2021hackthon.view.utils.toImageBody
@@ -18,7 +19,7 @@ class AnalyzePhotoViewModel @Inject constructor(
     private val repository: EmotionRepository
 ) : ViewModel() {
 
-    val isSuccess = MutableLiveData<Food>()
+    val isSuccess = MutableLiveData<EmotionFood>()
     val isFailure = MutableLiveData<String>()
 
     fun postAnalyzePhoto(contentResolver: ContentResolver, image: Uri) {

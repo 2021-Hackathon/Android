@@ -13,7 +13,9 @@ import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentSurveyFinishBinding
 import com.example.a2021hackthon.model.remote.dto.Survey
 import com.example.a2021hackthon.viewmodel.SurveyViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SurveyFinishFragment : Fragment() {
 
     private lateinit var binding: FragmentSurveyFinishBinding
@@ -34,10 +36,13 @@ class SurveyFinishFragment : Fragment() {
 
         binding.btnSurveyResult.setOnClickListener {
             viewModel.postAnalyzeSurvey(Survey(answerList))
-            viewModel.isSuccess.observe(viewLifecycleOwner, {
-                findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToResultFragment2(it.food, it.URL))
-            })
+            observe()
         }
     }
 
+    private fun observe() {
+        viewModel.isSuccess.observe(viewLifecycleOwner, {
+            findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToResultFragment2(it.URL, it.food))
+        })
+    }
 }
