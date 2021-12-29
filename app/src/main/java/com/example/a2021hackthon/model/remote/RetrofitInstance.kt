@@ -13,17 +13,10 @@ object RetrofitInstance {
 
     private val gson = Gson().newBuilder().setLenient().create()
 
-    private val okHttpClient = OkHttpClient.Builder().addInterceptor(TokenInterceptor()).build()
-
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create(gson))
         .baseUrl(BASE_URL)
         .build()
-        .create(EmotionService::class.java)
-}
 
-class TokenInterceptor : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
-        TODO("Not yet implemented")
-    }
+    val emotionService = retrofit.create(EmotionService::class.java)
 }
