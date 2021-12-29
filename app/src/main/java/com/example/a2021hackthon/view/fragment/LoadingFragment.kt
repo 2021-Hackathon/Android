@@ -22,7 +22,6 @@ class LoadingFragment : Fragment() {
 
     private lateinit var binding: FragmentLoadingBinding
 
-    private val args: LoadingFragmentArgs by navArgs()
     private val sViewModel: SurveyViewModel by viewModels()
     private val tViewModel: TimeViewModel by viewModels()
 
@@ -37,9 +36,11 @@ class LoadingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (args.isSurvey) {
-            surveyObserve()
+        val isSurvey = arguments?.getBoolean("isSurvey")
+
+        if (isSurvey == true) {
             val answerList = arguments?.getBooleanArray("answers")!!
+            surveyObserve()
             Thread.sleep(1000L)
             sViewModel.postAnalyzeSurvey(Survey(answerList))
         } else {

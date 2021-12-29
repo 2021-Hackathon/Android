@@ -28,7 +28,9 @@ class HomeTimeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnStartHomeTime.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoadingFragment(false))
+            val bundle = Bundle()
+            bundle.putBoolean("isSurvey", false)
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToLoadingFragment())
         }
     }
 }

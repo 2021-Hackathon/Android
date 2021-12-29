@@ -31,11 +31,12 @@ class SurveyFinishFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val answerList = arguments?.getBooleanArray("answers")!!
-        val bundle = Bundle()
-        bundle.putBooleanArray("answers", answerList)
 
         binding.btnSurveyResult.setOnClickListener {
-            findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToLoadingFragment(true))
+            val bundle = Bundle()
+            bundle.putBooleanArray("answers", answerList)
+            bundle.putBoolean("isSurvey", true)
+            findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToLoadingFragment())
         }
     }
 }

@@ -134,9 +134,5 @@
         <action
             android:id="@+id/action_loadingFragment_to_resultFragment2"
             app:destination="@id/resultFragment2" />
-        <argument
-            android:name="isSurvey"
-            app:argType="boolean" />
-
     </fragment>
 </navigation>
