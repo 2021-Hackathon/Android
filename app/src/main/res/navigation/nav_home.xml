@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/introFragment2"
-        android:name="com.example.a2021hackthon.view.activity.fragment.IntroFragment"
+        android:name="com.example.a2021hackthon.view.fragment.IntroFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
@@ -39,5 +39,14 @@
         android:id="@+id/surveyFragment2"
         android:name="com.example.a2021hackthon.view.fragment.SurveyFragment"
         android:label="fragment_survey"
-        tools:layout="@layout/fragment_survey" />
+        tools:layout="@layout/fragment_survey" >
+        <action
+            android:id="@+id/action_surveyFragment2_to_surveyFinishFragment"
+            app:destination="@id/surveyFinishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyFinishFragment"
+        android:name="com.example.a2021hackthon.view.fragment.SurveyFinishFragment"
+        android:label="fragment_survey_finish"
+        tools:layout="@layout/fragment_survey_finish" />
 </navigation>

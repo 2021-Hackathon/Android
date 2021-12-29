@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentSurveyBinding
@@ -49,8 +50,12 @@ class SurveyFragment : Fragment() {
             viewPagerAdapter.setData(list)
         }
 
-        binding.surveyViewPager.setOnClickListener {
-            binding.surveyViewPager.currentItem++
+        viewPagerAdapter.setOnItemClickListener {
+            if (binding.surveyViewPager.currentItem == 4)  {
+                findNavController().navigate(R.id.action_surveyFragment2_to_surveyFinishFragment)
+            } else {
+                binding.surveyViewPager.currentItem++
+            }
         }
 
 
