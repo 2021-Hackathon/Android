@@ -15,11 +15,9 @@ import com.example.a2021hackthon.model.remote.dto.Survey
 import com.example.a2021hackthon.viewmodel.SurveyViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class SurveyFinishFragment : Fragment() {
 
     private lateinit var binding: FragmentSurveyFinishBinding
-    private val viewModel: SurveyViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,16 +31,11 @@ class SurveyFinishFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val answerList = arguments?.getBooleanArray("answers")!!
+        val bundle = Bundle()
+        bundle.putBooleanArray("answers", answerList)
 
         binding.btnSurveyResult.setOnClickListener {
-            viewModel.postAnalyzeSurvey(Survey(answerList))
-            observe()
+            findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToLoadingFragment(true))
         }
-    }
-
-    private fun observe() {
-        viewModel.isSuccess.observe(viewLifecycleOwner, {
-            findNavController().navigate(SurveyFinishFragmentDirections.actionSurveyFinishFragmentToResultFragment2(it.URL, it.food))
-        })
     }
 }

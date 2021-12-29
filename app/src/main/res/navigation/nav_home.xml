@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_resultFragment2"
             app:destination="@id/resultFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFaceSelectPhotoFragment"
@@ -54,10 +57,10 @@
         android:id="@+id/surveyFinishFragment"
         android:name="com.example.a2021hackthon.view.fragment.SurveyFinishFragment"
         android:label="fragment_survey_finish"
-        tools:layout="@layout/fragment_survey_finish" >
+        tools:layout="@layout/fragment_survey_finish">
         <action
-            android:id="@+id/action_surveyFinishFragment_to_resultFragment2"
-            app:destination="@id/resultFragment2" />
+            android:id="@+id/action_surveyFinishFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
     </fragment>
     <fragment
         android:id="@+id/analyzePhotoFragment"
@@ -121,5 +124,19 @@
         <argument
             android:name="keyword"
             app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.a2021hackthon.view.fragment.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loadingFragment_to_resultFragment2"
+            app:destination="@id/resultFragment2" />
+        <argument
+            android:name="isSurvey"
+            app:argType="boolean" />
+
     </fragment>
 </navigation>
