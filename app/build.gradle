@@ -7,6 +7,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\user\\2021-hackathone-release-key.keystore')
+            storePassword '000000y'
+            keyPassword '000000y'
+            keyAlias 'key'
+        }
+    }
     compileSdk 31
 
     defaultConfig {
@@ -40,6 +48,7 @@ android {
 
 dependencies {
     implementation files('libs/libDaumMapAndroid.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // rxKotlin
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'

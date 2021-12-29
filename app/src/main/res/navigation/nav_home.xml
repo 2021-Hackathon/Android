@@ -89,6 +89,7 @@
     <fragment
         android:id="@+id/analyzePhotoResultFragment"
         android:name="com.example.a2021hackthon.view.fragment.AnalyzePhotoResultFragment"
+        tools:layout="@layout/fragment_analyze_photo_result"
         android:label="AnalyzePhotoResultFragment">
         <argument
             android:name="emotion"
@@ -98,6 +99,24 @@
             app:argType="string"/>
         <argument
             android:name="imageUri"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_analyzePhotoResultFragment_to_kakaoMapFragment"
+            app:destination="@id/kakaoMapFragment" />
+        <action
+            android:id="@+id/action_analyzePhotoResultFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kakaoMapFragment"
+        android:name="com.example.a2021hackthon.view.fragment.KakaoMapFragment"
+        android:label="fragment_kakao_map"
+        tools:layout="@layout/fragment_kakao_map" >
+        <action
+            android:id="@+id/action_kakaoMapFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="keyword"
             app:argType="string"/>
     </fragment>
 </navigation>

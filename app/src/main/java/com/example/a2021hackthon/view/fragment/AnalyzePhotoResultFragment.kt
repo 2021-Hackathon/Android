@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.a2021hackthon.R
@@ -13,6 +14,8 @@ import com.example.a2021hackthon.databinding.FragmentAnalyzePhotoResultBinding
 import com.example.a2021hackthon.model.remote.RetrofitInstance
 
 class AnalyzePhotoResultFragment : Fragment() {
+
+    private val navController by lazy { findNavController() }
 
     private lateinit var binding: FragmentAnalyzePhotoResultBinding
 
@@ -29,6 +32,22 @@ class AnalyzePhotoResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        init()
+
+        binding.btnMap.setOnClickListener {
+            navController.navigate(
+                AnalyzePhotoResultFragmentDirections.actionAnalyzePhotoResultFragmentToKakaoMapFragment(
+                    navArgs.food
+                )
+            )
+        }
+
+        binding.btnHome.setOnClickListener {
+            navController.navigate(R.id.action_analyzePhotoResultFragment_to_homeFragment)
+        }
+    }
+
+    private fun init() {
         binding.tvEmotion.text = navArgs.emotion
         binding.tvFood.text = "이런 기분에 ${navArgs.food}은 어때요?"
         Glide.with(this)

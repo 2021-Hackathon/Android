@@ -2,6 +2,7 @@ package com.example.a2021hackthon.di.module
 
 import com.example.a2021hackthon.model.remote.RetrofitInstance
 import com.example.a2021hackthon.model.remote.dao.EmotionService
+import com.example.a2021hackthon.model.remote.dao.KakaoMapService
 import com.example.a2021hackthon.model.remote.dao.SurveyService
 import com.example.a2021hackthon.model.remote.dao.TimeService
 import dagger.Module
@@ -27,4 +28,9 @@ object ServiceModule {
     @Provides
     fun provideTimeService(): TimeService =
         RetrofitInstance.timeService
+
+    @Singleton
+    @Provides
+    fun provideKakaoMapService(): KakaoMapService =
+        RetrofitInstance.kakaoMapService
 }

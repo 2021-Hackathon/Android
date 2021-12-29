@@ -1,8 +1,8 @@
 package com.example.a2021hackthon.view.activity
 
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.a2021hackthon.R
 import dagger.hilt.android.AndroidEntryPoint

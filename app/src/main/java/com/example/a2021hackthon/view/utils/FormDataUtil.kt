@@ -19,22 +19,6 @@ import kotlin.io.path.createTempDirectory
 
 
 fun Uri.toImageBody(name: String, context: Context): MultipartBody.Part {
-//    val projection = arrayOf(MediaStore.Images.Media._ID)
-//    val cursor = contentResolver.query(this, projection, null, null, null)!!
-//    cursor.moveToNext()
-//
-//    val idx = cursor.getColumnIndexOrThrow(MediaStore.Images.Media._ID)
-//    Log.d("toimagebody", "idx: $idx, uri: $this")
-//    val path = cursor.getString(idx)
-//
-//    val imageFile = File(path)
-//
-//    cursor.close()
-//
-//    return MultipartBody.Part.createFormData(
-//        name, imageFile.name, imageFile.asRequestBody("image/*".toMediaTypeOrNull())
-//    )
-
     val file = getFile(context, this)!!
     return MultipartBody.Part.createFormData(
         name, file.name, file.asRequestBody("image/*".toMediaTypeOrNull())

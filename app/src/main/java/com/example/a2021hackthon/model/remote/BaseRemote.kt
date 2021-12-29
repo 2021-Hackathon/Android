@@ -1,5 +1,6 @@
 package com.example.a2021hackthon.model.remote
 
+import android.util.Log
 import com.example.a2021hackthon.model.remote.dto.Res
 import io.reactivex.rxjava3.functions.Function
 import org.json.JSONObject
@@ -15,7 +16,15 @@ abstract class BaseRemote<SV> {
         }
     }
 
+    protected fun <T> getKakaoResponse(): Function<Response<T>, T> {
+        return Function {
+            checkError(it)
+            it.body()!!
+        }
+    }
+
     private fun <T> checkError(response: Response<T>) {
+        Log.d("chekcError", response.raw().toString())
         if (!response.isSuccessful) {
             val errorBody = JSONObject(response.errorBody()!!.string())
             throw Throwable(errorBody.getString("message"))
