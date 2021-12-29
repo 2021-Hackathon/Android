@@ -68,7 +68,7 @@ class KakaoMapFragment : Fragment() {
             val marker = MapPOIItem().apply {
                 mapPoint = MapPoint.mapPointWithGeoCoord(it.y, it.x)
                 this.tag = tag
-                itemName = "${it.place_name}\n${it.address_name}"
+                itemName = it.place_name
                 markerType = MapPOIItem.MarkerType.RedPin
                 isCustomImageAutoscale = false
             }

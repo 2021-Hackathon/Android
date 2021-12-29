@@ -8,9 +8,12 @@
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1984375" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/ic_photo.xml" value="0.17395833333333333" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/ic_photo_camera.xml" value="0.20989583333333334" />
+        <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/selector_button_outline.xml" value="0.275" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/selector_button_red.xml" value="0.275" />
+        <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/selector_home_button.xml" value="0.275" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/selector_main_to_white.xml" value="0.275" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/selector_red_to_white.xml" value="0.275" />
+        <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/drawable/selector_white_to_main.xml" value="0.275" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/layout/activity_splash.xml" value="0.176" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/layout/fragment_analyze_photo_result.xml" value="0.264" />
         <entry key="..\:/Github/2021-Hackathon/Android/app/src/main/res/layout/fragment_blank.xml" value="0.13177083333333334" />

@@ -16,6 +16,8 @@ import com.example.a2021hackthon.view.utils.ImagePicker
 
 class ResultFragment : Fragment() {
 
+    private val navController by lazy { findNavController() }
+
     private lateinit var binding: FragmentResultBinding
     private val args: ResultFragmentArgs by navArgs()
 
@@ -37,8 +39,14 @@ class ResultFragment : Fragment() {
         Glide.with(binding.resultImg).load(RetrofitInstance.BASE_URL + args.imageUri.substring(1)).into(binding.resultImg)
         binding.resultContent.text = args.food
 
-        binding.resultBack.setOnClickListener {
-            findNavController().navigate(R.id.action_resultFragment2_to_homeFragment2)
+        binding.btnBack.setOnClickListener {
+            navController.navigate(R.id.action_resultFragment2_to_homeFragment2)
+        }
+
+        binding.btnRecommend.setOnClickListener {
+            navController.navigate(
+                ResultFragmentDirections.actionResultFragment2ToKakaoMapFragment(args.food)
+            )
         }
     }
 }
