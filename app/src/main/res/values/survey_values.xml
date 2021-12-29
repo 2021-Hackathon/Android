@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="surveyContent">
+        <item>어떤 메뉴가 필요한가요?</item>
+        <item>매운 음식은 잘 먹나요??</item>
+        <item>오늘은 특별한 날인가요?</item>
+        <item>소중한 사람(들)과 시간을 보내나요?</item>
+        <item>지금 시간은?</item>
+    </string-array>
+
+    <string-array name="surveyAnswer1">
+        <item>디저트</item>
+        <item>네</item>
+        <item>네</item>
+        <item>네</item>
+        <item>저녁</item>
+    </string-array>
+
+    <string-array name="surveyAnswer2">
+        <item>식사</item>
+        <item>아니요</item>
+        <item>아니요</item>
+        <item>아니요</item>
+        <item>저녁 외</item>
+    </string-array>
+</resources>

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_homeFaceSelectPhotoFragment"
             app:destination="@id/homeFaceSelectPhotoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_surveyFragment2"
+            app:destination="@id/surveyFragment2" />
     </fragment>
     <fragment
         android:id="@+id/homeFaceSelectPhotoFragment"
@@ -23,4 +26,18 @@
             android:id="@+id/action_homeFaceSelectPhotoFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/introFragment2"
+        android:name="com.example.a2021hackthon.view.activity.fragment.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyFragment2"
+        android:name="com.example.a2021hackthon.view.activity.fragment.SurveyFragment"
+        android:label="fragment_survey"
+        tools:layout="@layout/fragment_survey" />
 </navigation>
