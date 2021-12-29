@@ -13,7 +13,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.MutableLiveData
 
 object ImagePicker {
-    val imageList = MutableLiveData<List<Uri>>()
+    val image = MutableLiveData<Uri>()
 
     fun selectStart(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -24,12 +24,8 @@ object ImagePicker {
     fun init(it: ActivityResult) {
         if (it.resultCode == Activity.RESULT_OK) {
             try {
-                val list = mutableListOf<Uri>()
-
                 if (it.data != null)
-                    list.add(it.data!!.data!!)
-
-                imageList.value = list
+                    image.value = it.data!!.data!!
             } catch (e: Exception) {
                 e.printStackTrace()
             }

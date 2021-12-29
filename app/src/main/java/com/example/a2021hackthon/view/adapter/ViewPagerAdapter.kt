@@ -1,24 +1,16 @@
 package com.example.a2021hackthon.view.adapter
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import com.example.a2021hackthon.R
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.a2021hackthon.view.fragment.HomeFaceFragment
 
-class ViewPagerAdapter(
-    private val list: List<Fragment>
-) : RecyclerView.Adapter<ViewPagerAdapter.ViewHolder>() {
+class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+    override fun getItemCount(): Int = 1
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    override fun createFragment(position: Int): Fragment =
+        when (position) {
+            0 -> HomeFaceFragment()
+            else -> HomeFaceFragment()
+        }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflated = LayoutInflater.from(parent.context).inflate(R.layout.fragment_home_face, parent, false)
-        return ViewHolder(inflated)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {}
-
-    override fun getItemCount(): Int = list.size
 }

@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun init() {
-        adapter = ViewPagerAdapter(listOf(HomeFaceFragment()))
+        adapter = ViewPagerAdapter(this)
         binding.viewPagerHome.adapter = adapter
     }
 }

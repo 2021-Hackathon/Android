@@ -8,11 +8,17 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.example.a2021hackthon.databinding.FragmentHomeFaceSelectPhotoBinding
 import com.example.a2021hackthon.view.utils.ImagePicker
 
 
-class HomeFaceSelectPhotoFragment : Fragment() {
+class SelectPhotoFragment : Fragment() {
+
+    private val navController by lazy {
+        findNavController()
+    }
 
     private lateinit var binding: FragmentHomeFaceSelectPhotoBinding
 
@@ -29,6 +35,7 @@ class HomeFaceSelectPhotoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init()
+        observe()
 
         binding.btnSelectPhoto.setOnClickListener {
             ImagePicker.selectStart(resultLauncher)
@@ -40,6 +47,14 @@ class HomeFaceSelectPhotoFragment : Fragment() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             ImagePicker.init(it)
+        }
+    }
+
+    private fun observe() {
+        ImagePicker.image.observe(viewLifecycleOwner) {
+            navController.navigate(
+                SelectPhotoFragmentDirections.actionHomeFaceSelectPhotoFragmentToAnalyzePhotoFragment(it.toString())
+            )
         }
     }
 }

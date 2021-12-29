@@ -19,12 +19,15 @@
     </fragment>
     <fragment
         android:id="@+id/homeFaceSelectPhotoFragment"
-        android:name="com.example.a2021hackthon.view.fragment.HomeFaceSelectPhotoFragment"
+        android:name="com.example.a2021hackthon.view.fragment.SelectPhotoFragment"
         tools:layout="@layout/fragment_home_face_select_photo"
         android:label="HomeFaceSelectPhotoFragment" >
         <action
             android:id="@+id/action_homeFaceSelectPhotoFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFaceSelectPhotoFragment_to_analyzePhotoFragment"
+            app:destination="@id/analyzePhotoFragment" />
     </fragment>
     <fragment
         android:id="@+id/introFragment2"
@@ -49,4 +52,16 @@
         android:name="com.example.a2021hackthon.view.fragment.SurveyFinishFragment"
         android:label="fragment_survey_finish"
         tools:layout="@layout/fragment_survey_finish" />
+    <fragment
+        android:id="@+id/analyzePhotoFragment"
+        android:name="com.example.a2021hackthon.view.fragment.AnalyzePhotoFragment"
+        android:label="AnalyzePhotoFragment"
+        tools:layout="@layout/fragment_home_face_analyze">
+        <action
+            android:id="@+id/action_analyzePhotoFragment_to_homeFaceSelectPhotoFragment"
+            app:destination="@id/homeFaceSelectPhotoFragment" />
+        <argument
+            android:name="photoUri"
+            app:argType="string"/>
+    </fragment>
 </navigation>
