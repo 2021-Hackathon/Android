@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            style="@style/RedButton"
             android:id="@+id/btn_survey_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

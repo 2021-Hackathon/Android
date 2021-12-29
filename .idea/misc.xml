@@ -8,6 +8,9 @@
         <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/drawable/background_title.xml" value="0.3907407407407407" />
         <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/drawable/custom_button_red.xml" value="0.3907407407407407" />
         <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/drawable/custom_prograssbar.xml" value="0.3907407407407407" />
+        <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/drawable/selector_home_button.xml" value="0.3861111111111111" />
+        <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/drawable/selector_main_to_white.xml" value="0.3861111111111111" />
+        <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/drawable/selector_red_to_white.xml" value="0.3861111111111111" />
         <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/layout/activity_main.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/layout/fragment_home_face.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/MinHyukJi/Documents/GitHub/Android/app/src/main/res/layout/fragment_home_time.xml" value="0.21822916666666667" />

@@ -44,6 +44,7 @@ class SurveyFragment : Fragment() {
         }
 
         binding.surveyViewPager.apply {
+            isUserInputEnabled = false
             orientation - ViewPager2.ORIENTATION_HORIZONTAL
             viewPagerAdapter = SurveyViewPagerAdapter()
             adapter = viewPagerAdapter
