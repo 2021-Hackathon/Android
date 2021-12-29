@@ -1,17 +1,18 @@
 package com.example.a2021hackthon.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.a2021hackthon.R
-import com.example.a2021hackthon.base.BaseFragment
-import com.example.a2021hackthon.databinding.FragmentHomeBinding
 import com.example.a2021hackthon.databinding.FragmentHomeFaceBinding
 
-class HomeFaceFragment : BaseFragment<FragmentHomeFaceBinding>() {
+class HomeFaceFragment : Fragment() {
+
+    private lateinit var binding: FragmentHomeFaceBinding
 
     private val navController by lazy {
         findNavController()
@@ -21,7 +22,7 @@ class HomeFaceFragment : BaseFragment<FragmentHomeFaceBinding>() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeFaceBinding.inflate(layoutInflater, container, false)
+        binding = FragmentHomeFaceBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
