@@ -8,14 +8,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    const val BASE_URL = ""
+    const val BASE_URL = "http://172.16.1.238:3000/"
 
     private val gson = Gson().newBuilder().setLenient().create()
 
     private val okHttpClient = OkHttpClient.Builder().addInterceptor(TokenInterceptor()).build()
 
     private val retrofit = Retrofit.Builder()
-        .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 }
