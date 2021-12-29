@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.a2021hackthon.databinding.FragmentHomeBinding
 import com.example.a2021hackthon.view.adapter.ViewPagerAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding

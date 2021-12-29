@@ -37,8 +37,12 @@ class SelectPhotoFragment : Fragment() {
         init()
         observe()
 
-        binding.btnSelectPhoto.setOnClickListener {
+        binding.btnAlbum.setOnClickListener {
             ImagePicker.selectStart(resultLauncher)
+        }
+
+        binding.btnCamera.setOnClickListener {
+
         }
     }
 

@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentHomeFaceBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFaceFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeFaceBinding

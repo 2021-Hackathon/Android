@@ -8,10 +8,13 @@ import androidx.lifecycle.ViewModel
 import com.example.a2021hackthon.model.remote.dto.Food
 import com.example.a2021hackthon.model.repository.EmotionRepository
 import com.example.a2021hackthon.view.utils.toImageBody
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import javax.inject.Inject
 
-class AnalyzePhotoViewModel(
+@HiltViewModel
+class AnalyzePhotoViewModel @Inject constructor(
     private val repository: EmotionRepository
 ) : ViewModel() {
 

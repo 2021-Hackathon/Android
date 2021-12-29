@@ -3,28 +3,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="32dp"
         android:orientation="vertical"
         android:gravity="center"
         tools:context=".view.fragment.SelectPhotoFragment">
 
         <ImageButton
-            android:id="@+id/btn_select_photo"
+            android:id="@+id/btn_camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="80dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_photo_camera" />
+            android:src="@drawable/ic_photo_camera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_camera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_camera"
+            app:srcCompat="@drawable/ic_photo"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            style="@style/Base.Widget.AppCompat.TextView.Regular"
             android:id="@+id/textView2"
-            android:gravity="center"
+            style="@style/Base.Widget.AppCompat.TextView.Regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="표정을 분석할 사진을\n업로드 해주세요!" />
+            android:layout_marginTop="16dp"
+            android:text="카메라로 가져오기"
+            app:layout_constraintEnd_toEndOf="@+id/btn_camera"
+            app:layout_constraintStart_toStartOf="@+id/btn_camera"
+            app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/Base.Widget.AppCompat.TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="앨범에서 가져오기"
+            app:layout_constraintEnd_toEndOf="@+id/btn_album"
+            app:layout_constraintStart_toStartOf="@+id/btn_album"
+            app:layout_constraintTop_toBottomOf="@+id/btn_album" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/Base.Widget.AppCompat.TextView.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진을 가져와주세요."
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
