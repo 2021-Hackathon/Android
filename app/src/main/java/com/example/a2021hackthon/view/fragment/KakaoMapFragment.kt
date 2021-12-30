@@ -9,7 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.a2021hackthon.R
 import com.example.a2021hackthon.databinding.FragmentKakaoMapBinding
 import com.example.a2021hackthon.model.remote.dto.Place
 import com.example.a2021hackthon.view.utils.MessageUtils
@@ -44,6 +46,10 @@ class KakaoMapFragment : Fragment() {
         observe()
 
         viewModel.getSearchPlace(navArgs.keyword)
+
+        binding.btnClose.setOnClickListener {
+            findNavController().navigate(R.id.action_kakaoMapFragment_to_homeFragment)
+        }
     }
 
     private fun init() {
