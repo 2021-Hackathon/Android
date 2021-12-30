@@ -83,8 +83,10 @@ class KakaoMapFragment : Fragment() {
             tag++
         }
 
-        val focusMapPoint = MapPoint.mapPointWithGeoCoord(list[1].y, list[1].x)
-        mapView.setMapCenterPointAndZoomLevel(focusMapPoint, 3, true)
+        if (list.isNotEmpty()) {
+            val focusMapPoint = MapPoint.mapPointWithGeoCoord(list[0].y, list[0].x)
+            mapView.setMapCenterPointAndZoomLevel(focusMapPoint, 3, true)
+        }
     }
 
     private fun setEventListener(list: List<Place>) {
