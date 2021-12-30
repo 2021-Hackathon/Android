@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager2.widget.ViewPager2
 import com.example.a2021hackthon.databinding.FragmentHomeBinding
 import com.example.a2021hackthon.view.adapter.ViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,5 +33,13 @@ class HomeFragment : Fragment() {
     private fun init() {
         adapter = ViewPagerAdapter(this)
         binding.viewPagerHome.adapter = adapter
+
+        binding.viewPagerHome.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.pageIndicatorView.setSelected(position)
+            }
+        })
     }
 }
