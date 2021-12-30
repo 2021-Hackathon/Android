@@ -13,8 +13,8 @@
         <TextView
             android:id="@+id/survey_finish_"
             android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:text="설문이 끝났습니다."
+            android:layout_height="220dp"
+            android:text="설문이 모두 끝났습니다."
             android:background="#F25454"
             android:textSize="24sp"
             android:textColor="@color/white"
@@ -22,6 +22,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_success"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_speed=".5"
+            app:layout_constraintTop_toBottomOf="@id/survey_finish_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/survey_result"
+            app:lottie_rawRes="@raw/success"/>
 
         <TextView
             android:id="@+id/survey_result"
@@ -31,7 +44,8 @@
             android:textSize="18sp"
             android:layout_marginBottom="10dp"
             android:text="버튼 눌러서 결과 보기"
-           android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatButton
